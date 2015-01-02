@@ -7,6 +7,7 @@ public class Sound {
 
     private String name;
     private String color;
+    private int soundResource;
 
     public String getName() {
         return name;
@@ -22,5 +23,13 @@ public class Sound {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public int getSoundResource() {
+        return soundResource;
+    }
+
+    public void setSoundResource(int soundResource) {
+        this.soundResource = soundResource;
     }
 }
