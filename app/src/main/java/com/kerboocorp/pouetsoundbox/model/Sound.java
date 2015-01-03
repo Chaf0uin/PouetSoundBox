@@ -9,6 +9,7 @@ public class Sound {
     private String color;
     private String textColor;
     private int soundResource;
+    private long duration;
 
     public String getName() {
         return name;
@@ -40,5 +41,13 @@ public class Sound {
 
     public void setSoundResource(int soundResource) {
         this.soundResource = soundResource;
+    }
+
+    public long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
     }
 }
