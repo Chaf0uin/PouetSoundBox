@@ -43,12 +43,14 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         Sound sound = new Sound();
         sound.setName("Pouet");
         sound.setColor("#FF0000");
+        sound.setTextColor("#FFFFFF");
         sound.setSoundResource(R.raw.horn);
         soundList.add(sound);
 
         Sound sound2 = new Sound();
         sound2.setName("Trololo");
         sound2.setColor("#FFFF00");
+        sound2.setTextColor("#000000");
         sound2.setSoundResource(R.raw.horn);
         soundList.add(sound2);
 
@@ -73,6 +75,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             Sound sound = soundList.get(i);
 
             soundViewHolder.name.setText(sound.getName());
+            soundViewHolder.name.setTextColor(Color.parseColor(sound.getTextColor()));
 
             soundViewHolder.soundLayout.setBackgroundColor(Color.parseColor(sound.getColor()));
 

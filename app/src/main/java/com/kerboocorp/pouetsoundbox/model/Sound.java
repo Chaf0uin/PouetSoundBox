@@ -7,6 +7,7 @@ public class Sound {
 
     private String name;
     private String color;
+    private String textColor;
     private int soundResource;
 
     public String getName() {
@@ -23,6 +24,14 @@ public class Sound {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getTextColor() {
+        return textColor;
+    }
+
+    public void setTextColor(String textColor) {
+        this.textColor = textColor;
     }
 
     public int getSoundResource() {
