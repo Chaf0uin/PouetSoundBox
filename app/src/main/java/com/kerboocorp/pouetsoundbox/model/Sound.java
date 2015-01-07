@@ -6,8 +6,8 @@ package com.kerboocorp.pouetsoundbox.model;
 public class Sound {
 
     private String name;
-    private String color;
-    private String textColor;
+    private int color;
+    private int textColor;
     private int soundResource;
     private long duration;
 
@@ -19,19 +19,19 @@ public class Sound {
         this.name = name;
     }
 
-    public String getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(int color) {
         this.color = color;
     }
 
-    public String getTextColor() {
+    public int getTextColor() {
         return textColor;
     }
 
-    public void setTextColor(String textColor) {
+    public void setTextColor(int textColor) {
         this.textColor = textColor;
     }
 
