@@ -1,4 +1,4 @@
-package com.kerboocorp.pouetsoundbox.activities;
+package com.kerboocorp.ultimatesoundbox.activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -6,13 +6,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.kerboocorp.pouetsoundbox.R;
-import com.kerboocorp.pouetsoundbox.adapters.SoundAdapter;
-
-import java.util.List;
+import com.kerboocorp.ultimatesoundbox.R;
+import com.kerboocorp.ultimatesoundbox.adapters.SoundAdapter;
 
 
 public class MainActivity extends ActionBarActivity {

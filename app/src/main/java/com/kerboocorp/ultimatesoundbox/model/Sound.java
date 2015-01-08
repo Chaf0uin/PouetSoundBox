@@ -1,4 +1,4 @@
-package com.kerboocorp.pouetsoundbox.model;
+package com.kerboocorp.ultimatesoundbox.model;
 
 /**
  * Created by chris on 2/01/15.

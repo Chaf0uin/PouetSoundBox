@@ -1,11 +1,7 @@
-package com.kerboocorp.pouetsoundbox.adapters;
+package com.kerboocorp.ultimatesoundbox.adapters;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.SoundPool;
-import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.kerboocorp.pouetsoundbox.R;
-import com.kerboocorp.pouetsoundbox.managers.SoundManager;
-import com.kerboocorp.pouetsoundbox.model.Sound;
-import com.kerboocorp.pouetsoundbox.observers.StopSoundObserver;
+import com.kerboocorp.ultimatesoundbox.R;
+import com.kerboocorp.ultimatesoundbox.managers.SoundManager;
+import com.kerboocorp.ultimatesoundbox.model.Sound;
+import com.kerboocorp.ultimatesoundbox.observers.StopSoundObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +67,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound4.setName("Leeloo Dallas Multipass");
         sound4.setColor(context.getResources().getColor(R.color.red));
         sound4.setTextColor(context.getResources().getColor(R.color.white));
-        sound4.setSoundResource(R.raw.leeloodallasmultipass);
+        sound4.setSoundResource(R.raw.leeloo);
         soundList.add(sound4);
 
         Sound sound5 = new Sound();
@@ -121,6 +117,142 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound10.setTextColor(context.getResources().getColor(R.color.white));
         sound10.setSoundResource(R.raw.tabouret);
         soundList.add(sound10);
+
+        Sound sound11 = new Sound();
+        sound11.setId(11L);
+        sound11.setName("C'est vrai");
+        sound11.setColor(context.getResources().getColor(R.color.yellow));
+        sound11.setTextColor(context.getResources().getColor(R.color.black));
+        sound11.setSoundResource(R.raw.cestvrai);
+        soundList.add(sound11);
+
+        Sound sound12 = new Sound();
+        sound12.setId(12L);
+        sound12.setName("Et patati");
+        sound12.setColor(context.getResources().getColor(R.color.blue));
+        sound12.setTextColor(context.getResources().getColor(R.color.white));
+        sound12.setSoundResource(R.raw.etpatati);
+        soundList.add(sound12);
+
+        Sound sound13 = new Sound();
+        sound13.setId(13L);
+        sound13.setName("Even later");
+        sound13.setColor(context.getResources().getColor(R.color.red));
+        sound13.setTextColor(context.getResources().getColor(R.color.white));
+        sound13.setSoundResource(R.raw.evenlater);
+        soundList.add(sound13);
+
+        Sound sound14 = new Sound();
+        sound14.setId(14L);
+        sound14.setName("Hodor");
+        sound14.setColor(context.getResources().getColor(R.color.yellow));
+        sound14.setTextColor(context.getResources().getColor(R.color.black));
+        sound14.setSoundResource(R.raw.hodor);
+        soundList.add(sound14);
+
+        Sound sound15 = new Sound();
+        sound15.setId(15L);
+        sound15.setName("Ik heb geen idee");
+        sound15.setColor(context.getResources().getColor(R.color.blue));
+        sound15.setTextColor(context.getResources().getColor(R.color.white));
+        sound15.setSoundResource(R.raw.ikhebgeenidee);
+        soundList.add(sound15);
+
+        Sound sound16 = new Sound();
+        sound16.setId(16L);
+        sound16.setName("Loituma");
+        sound16.setColor(context.getResources().getColor(R.color.red));
+        sound16.setTextColor(context.getResources().getColor(R.color.white));
+        sound16.setSoundResource(R.raw.loituma);
+        soundList.add(sound16);
+
+        Sound sound17 = new Sound();
+        sound17.setId(17L);
+        sound17.setName("C'est la mer noire");
+        sound17.setColor(context.getResources().getColor(R.color.yellow));
+        sound17.setTextColor(context.getResources().getColor(R.color.black));
+        sound17.setSoundResource(R.raw.mernoire);
+        soundList.add(sound17);
+
+        Sound sound18 = new Sound();
+        sound18.setId(18L);
+        sound18.setName("You're in my spot");
+        sound18.setColor(context.getResources().getColor(R.color.blue));
+        sound18.setTextColor(context.getResources().getColor(R.color.white));
+        sound18.setSoundResource(R.raw.myspot);
+        soundList.add(sound18);
+
+        Sound sound19 = new Sound();
+        sound19.setId(19L);
+        sound19.setName("Neogotisch");
+        sound19.setColor(context.getResources().getColor(R.color.red));
+        sound19.setTextColor(context.getResources().getColor(R.color.white));
+        sound19.setSoundResource(R.raw.neogotisch);
+        soundList.add(sound19);
+
+        Sound sound20 = new Sound();
+        sound20.setId(20L);
+        sound20.setName("On était bien remis d'accord");
+        sound20.setColor(context.getResources().getColor(R.color.yellow));
+        sound20.setTextColor(context.getResources().getColor(R.color.black));
+        sound20.setSoundResource(R.raw.onestbienremisdaccord);
+        soundList.add(sound20);
+
+        Sound sound21 = new Sound();
+        sound21.setId(21L);
+        sound21.setName("So fluffy I'm gonna die");
+        sound21.setColor(context.getResources().getColor(R.color.blue));
+        sound21.setTextColor(context.getResources().getColor(R.color.white));
+        sound21.setSoundResource(R.raw.sofluffyimgonnadie);
+        soundList.add(sound21);
+
+        Sound sound22 = new Sound();
+        sound22.setId(22L);
+        sound22.setName("So fluffay");
+        sound22.setColor(context.getResources().getColor(R.color.red));
+        sound22.setTextColor(context.getResources().getColor(R.color.white));
+        sound22.setSoundResource(R.raw.sofluffay);
+        soundList.add(sound22);
+
+        Sound sound23 = new Sound();
+        sound23.setId(23L);
+        sound23.setName("This is Sparta");
+        sound23.setColor(context.getResources().getColor(R.color.yellow));
+        sound23.setTextColor(context.getResources().getColor(R.color.black));
+        sound23.setSoundResource(R.raw.sparta);
+        soundList.add(sound23);
+
+        Sound sound24 = new Sound();
+        sound24.setId(24L);
+        sound24.setName("Ta kette");
+        sound24.setColor(context.getResources().getColor(R.color.blue));
+        sound24.setTextColor(context.getResources().getColor(R.color.white));
+        sound24.setSoundResource(R.raw.takette);
+        soundList.add(sound24);
+
+        Sound sound25 = new Sound();
+        sound25.setId(25L);
+        sound25.setName("I know exactly what happened");
+        sound25.setColor(context.getResources().getColor(R.color.red));
+        sound25.setTextColor(context.getResources().getColor(R.color.white));
+        sound25.setSoundResource(R.raw.whathappened);
+        soundList.add(sound25);
+
+        Sound sound26 = new Sound();
+        sound26.setId(26L);
+        sound26.setName("Weeeee we we weeeeee");
+        sound26.setColor(context.getResources().getColor(R.color.yellow));
+        sound26.setTextColor(context.getResources().getColor(R.color.black));
+        sound26.setSoundResource(R.raw.wipiggy);
+        soundList.add(sound26);
+
+        Sound sound27 = new Sound();
+        sound27.setId(27L);
+        sound27.setName("Même que des fois ze vomis");
+        sound27.setColor(context.getResources().getColor(R.color.blue));
+        sound27.setTextColor(context.getResources().getColor(R.color.white));
+        sound27.setSoundResource(R.raw.zevomi);
+        soundList.add(sound27);
 
         notifyDataSetChanged();
 

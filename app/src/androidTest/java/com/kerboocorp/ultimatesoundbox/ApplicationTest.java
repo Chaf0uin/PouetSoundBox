@@ -1,4 +1,4 @@
-package com.kerboocorp.pouetsoundbox;
+package com.kerboocorp.ultimatesoundbox;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

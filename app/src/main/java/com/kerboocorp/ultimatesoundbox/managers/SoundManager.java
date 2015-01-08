@@ -1,6 +1,6 @@
-package com.kerboocorp.pouetsoundbox.managers;
+package com.kerboocorp.ultimatesoundbox.managers;
 
-import com.kerboocorp.pouetsoundbox.managers.interfaces.SoundInterface;
+import com.kerboocorp.ultimatesoundbox.managers.interfaces.SoundInterface;
 
 import retrofit.RestAdapter;
 
@@ -26,6 +26,6 @@ public class SoundManager {
 
 
     public void updateSound(Long id) {
-        service.updateSound(id);
+        //service.updateSound(id, Callback);
     }
 }

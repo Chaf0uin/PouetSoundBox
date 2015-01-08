@@ -1,8 +1,5 @@
-package com.kerboocorp.pouetsoundbox.managers.interfaces;
+package com.kerboocorp.ultimatesoundbox.managers.interfaces;
 
-import com.kerboocorp.pouetsoundbox.model.Sound;
-
-import retrofit.http.Body;
 import retrofit.http.PUT;
 import retrofit.http.Path;
 
