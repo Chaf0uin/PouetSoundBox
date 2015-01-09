@@ -48,36 +48,17 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         observerList = new ArrayList<StopSoundObserver>();
 
-        Sound sound = new Sound();
-        sound.setId(1L);
-        sound.setName("Pouet");
-        sound.setColor(context.getResources().getColor(R.color.red));
-        sound.setTextColor(context.getResources().getColor(R.color.white));
-        sound.setSoundResource(R.raw.horn);
+        Sound sound = new Sound(1L, "Pouet", context.getResources().getColor(R.color.red), context.getResources().getColor(R.color.white), R.raw.horn);
         soundList.add(sound);
 
-        Sound sound2 = new Sound();
-        sound2.setId(2L);
-        sound2.setName("Trololo");
-        sound2.setColor(context.getResources().getColor(R.color.yellow));
-        sound2.setTextColor(context.getResources().getColor(R.color.black));
-        sound2.setSoundResource(R.raw.trololo);
+        Sound sound2 = new Sound(2L, "Trololo", context.getResources().getColor(R.color.yellow), context.getResources().getColor(R.color.black), R.raw.trololo);
         soundList.add(sound2);
 
-        Sound sound3 = new Sound();
-        sound3.setId(3L);
-        sound3.setName("Je code avec le cul");
-        sound3.setColor(context.getResources().getColor(R.color.blue));
-        sound3.setTextColor(context.getResources().getColor(R.color.white));
-        sound3.setSoundResource(R.raw.jecodeaveclecul);
+        Sound sound3 = new Sound(3L, "Je code avec le cul", context.getResources().getColor(R.color.blue), context.getResources().getColor(R.color.white), R.raw.jecodeaveclecul);
         soundList.add(sound3);
 
-        Sound sound4 = new Sound();
-        sound4.setId(4L);
-        sound4.setName("Leeloo Dallas Multipass");
-        sound4.setColor(context.getResources().getColor(R.color.red));
-        sound4.setTextColor(context.getResources().getColor(R.color.white));
-        sound4.setSoundResource(R.raw.leeloo);
+
+        Sound sound4 = new Sound(4L, "Leeloo Dallas Multipass", context.getResources().getColor(R.color.red), context.getResources().getColor(R.color.white), R.raw.leeloo);
         soundList.add(sound4);
 
         Sound sound5 = new Sound();
@@ -88,6 +69,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound5.setSoundResource(R.raw.legenwaitforitdary);
         soundList.add(sound5);
 
+
         Sound sound6 = new Sound();
         sound6.setId(6L);
         sound6.setName("Wait for it");
@@ -95,6 +77,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound6.setTextColor(context.getResources().getColor(R.color.white));
         sound6.setSoundResource(R.raw.waitforit);
         soundList.add(sound6);
+
 
         Sound sound7 = new Sound();
         sound7.setId(7L);
@@ -104,6 +87,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound7.setSoundResource(R.raw.surprisemotherfucker);
         soundList.add(sound7);
 
+
         Sound sound8 = new Sound();
         sound8.setId(8L);
         sound8.setName("La boule noire");
@@ -111,6 +95,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound8.setTextColor(context.getResources().getColor(R.color.black));
         sound8.setSoundResource(R.raw.motus);
         soundList.add(sound8);
+
 
         Sound sound9 = new Sound();
         sound9.setId(9L);
@@ -120,6 +105,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound9.setSoundResource(R.raw.jenesaispas);
         soundList.add(sound9);
 
+
         Sound sound10 = new Sound();
         sound10.setId(10L);
         sound10.setName("Tabouret");
@@ -128,6 +114,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound10.setSoundResource(R.raw.tabouret);
         soundList.add(sound10);
 
+
         Sound sound11 = new Sound();
         sound11.setId(11L);
         sound11.setName("C'est vrai");
@@ -135,6 +122,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         sound11.setTextColor(context.getResources().getColor(R.color.black));
         sound11.setSoundResource(R.raw.cestvrai);
         soundList.add(sound11);
+
 
         Sound sound12 = new Sound();
         sound12.setId(12L);

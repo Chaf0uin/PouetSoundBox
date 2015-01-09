@@ -12,6 +12,16 @@ public class Sound {
     private int soundResource;
     private long duration;
 
+    public Sound() {}
+
+    public Sound(Long id, String name, int color, int textColor, int soundResource) {
+        this.id = id;
+        this.name = name;
+        this.color = color;
+        this.textColor = textColor;
+        this.soundResource = soundResource;
+    }
+
     public Long getId() {
         return id;
     }
