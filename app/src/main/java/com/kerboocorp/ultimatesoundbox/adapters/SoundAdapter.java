@@ -340,13 +340,22 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             }
             name.setVisibility(View.GONE);
             musicImageView.setVisibility(View.VISIBLE);
-            playSound(sound.getSoundResource());
-
             player = MediaPlayer.create(context, sound.getSoundResource());
             player.setOnCompletionListener(SoundAdapter.this);
             int duration = player.getDuration();
+
+            playSound(sound.getSoundResource());
+
+
             final float  step = duration/20;
             final float stepPercentage = (1/step);
+
+            updateLayout(0, 1);
+
+            if (timer != null) {
+                timer.cancel();
+                timer.purge();
+            }
 
             timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
@@ -379,6 +388,11 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         @Override
         public void stopSound() {
+            if (timer != null) {
+                timer.cancel();
+                timer.purge();
+            }
+            updateLayout(0, 1);
             name.setVisibility(View.VISIBLE);
             musicImageView.setVisibility(View.GONE);
         }
