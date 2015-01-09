@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
         soundListView.setLayoutManager(linearLayoutManager);
         soundListView.setItemAnimator(new DefaultItemAnimator());
 
-        soundAdapter = new SoundAdapter(R.layout.sound_item, this);
+        soundAdapter = new SoundAdapter(R.layout.sound_item, this, this);
         soundListView.setAdapter(soundAdapter);
 
     }

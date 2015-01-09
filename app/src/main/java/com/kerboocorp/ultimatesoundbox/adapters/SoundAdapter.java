@@ -1,12 +1,17 @@
 package com.kerboocorp.ultimatesoundbox.adapters;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -14,9 +19,12 @@ import com.kerboocorp.ultimatesoundbox.R;
 import com.kerboocorp.ultimatesoundbox.managers.SoundManager;
 import com.kerboocorp.ultimatesoundbox.model.Sound;
 import com.kerboocorp.ultimatesoundbox.observers.StopSoundObserver;
+import com.kerboocorp.ultimatesoundbox.observers.UpdateLayoutObserver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by chris on 2/01/15.
@@ -26,15 +34,17 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private List<Sound> soundList;
     private int rowLayout;
     private Context context;
+    private ActionBarActivity activity;
 
     private static MediaPlayer player;
 
     private static List<StopSoundObserver> observerList;
 
-    public SoundAdapter(int rowLayout, Context context) {
+    public SoundAdapter(int rowLayout, Context context, ActionBarActivity activity) {
         this.soundList = new ArrayList<Sound>();
         this.rowLayout = rowLayout;
         this.context = context;
+        this.activity = activity;
 
         observerList = new ArrayList<StopSoundObserver>();
 
@@ -305,17 +315,22 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
 
-    public class SoundViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, StopSoundObserver {
+    public class SoundViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, StopSoundObserver, UpdateLayoutObserver {
         public TextView name;
         public RelativeLayout soundLayout;
+        public LinearLayout progressLayout;
+        public LinearLayout remainingProgressLayout;
         public Sound sound;
         public Context context;
         public ImageView musicImageView;
+        Timer timer;
 
         public SoundViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.nameTextView);
             soundLayout = (RelativeLayout) itemView.findViewById(R.id.soundLayout);
+            progressLayout = (LinearLayout) itemView.findViewById(R.id.progressLayout);
+            remainingProgressLayout = (LinearLayout) itemView.findViewById(R.id.remainingProgressLayout);
             musicImageView = (ImageView) itemView.findViewById(R.id.musicImageView);
 
             itemView.setOnClickListener(this);
@@ -339,6 +354,38 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             musicImageView.setVisibility(View.VISIBLE);
             playSound(sound.getSoundResource());
 
+            player = MediaPlayer.create(context, sound.getSoundResource());
+            player.setOnCompletionListener(SoundAdapter.this);
+            int duration = player.getDuration();
+            final float  step = duration/20;
+            final float stepPercentage = (1/step);
+
+            timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                private int stepCounter = 0;
+                private float progressBarPercentage = stepPercentage;
+                private float remainingProgressBarPercentage = 1-stepPercentage;
+
+                @Override
+                public void run() {
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            stepCounter++;
+                            if (stepCounter < step) {
+                                updateLayout(progressBarPercentage, remainingProgressBarPercentage);
+
+                                progressBarPercentage = progressBarPercentage + stepPercentage;
+                                remainingProgressBarPercentage = remainingProgressBarPercentage - stepPercentage;
+
+                            } else {
+                                timer.cancel();
+                                updateLayout(0, 1);
+                            }
+                        }
+                    });
+                }
+            }, 0, 20);
 
         }
 
@@ -346,6 +393,16 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         public void stopSound() {
             name.setVisibility(View.VISIBLE);
             musicImageView.setVisibility(View.GONE);
+        }
+
+        @Override
+        public void updateLayout(float progressLayoutPercentage, float remainingProgressLayoutPercentage) {
+            LinearLayout.LayoutParams progressLayoutParams = (LinearLayout.LayoutParams) progressLayout.getLayoutParams();
+            LinearLayout.LayoutParams remainingProgressLayoutParams = (LinearLayout.LayoutParams) remainingProgressLayout.getLayoutParams();
+            progressLayoutParams.weight = progressLayoutPercentage;
+            remainingProgressLayoutParams.weight = remainingProgressLayoutPercentage;
+            progressLayout.setLayoutParams(progressLayoutParams);
+            remainingProgressLayout.setLayoutParams(remainingProgressLayoutParams);
         }
     }
 
