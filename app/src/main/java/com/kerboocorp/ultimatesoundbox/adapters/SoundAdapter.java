@@ -308,6 +308,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         public RelativeLayout soundLayout;
         public LinearLayout progressLayout;
         public LinearLayout remainingProgressLayout;
+        public LinearLayout progressContainerLayout;
         public Sound sound;
         public Context context;
         public ImageView musicImageView;
@@ -319,6 +320,7 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             soundLayout = (RelativeLayout) itemView.findViewById(R.id.soundLayout);
             progressLayout = (LinearLayout) itemView.findViewById(R.id.progressLayout);
             remainingProgressLayout = (LinearLayout) itemView.findViewById(R.id.remainingProgressLayout);
+            progressContainerLayout = (LinearLayout) itemView.findViewById(R.id.progressContainerLayout);
             musicImageView = (ImageView) itemView.findViewById(R.id.musicImageView);
 
             itemView.setOnClickListener(this);
@@ -413,8 +415,6 @@ public class SoundAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         player = MediaPlayer.create(context, soundResource);
         player.setOnCompletionListener(this);
         player.start();
-
-
     }
 
 }
